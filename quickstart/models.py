@@ -8,5 +8,5 @@ from django.utils.safestring import mark_safe
 
 class Items(models.Model):
     type = models.CharField(null=True, max_length=20)
-    number = models.IntegerField(unique=True, default=0, max_length=10)
-    quantity = models.IntegerField(default=0, max_length=20)
+    number = models.IntegerField(unique=True, default=0)
+    quantity = models.IntegerField(default=0)
