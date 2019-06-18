@@ -27,7 +27,6 @@ class SavedItemsViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
 
 
-
 # @api_view(['GET', 'POST'])
 # def item_list(request):
 #     """
