@@ -6,7 +6,7 @@ from .serializers import ItemsSerializer, SavedItemsSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from .filters import SavedItemsFilter
+from .filters import SavedItemsFilter, ItemsFilter
 
 # class UserViewSet(viewsets.ModelViewSet):
 #     queryset = User.objects.all().order_by('-date_joined')
@@ -19,6 +19,8 @@ from .filters import SavedItemsFilter
 class ItemsViewSet(viewsets.ModelViewSet):
     queryset = Items.objects.all()
     serializer_class = ItemsSerializer
+    filter_class = ItemsFilter
+    ordering_fields = '__all__'
 
 class SavedItemsViewSet(viewsets.ModelViewSet):
     queryset = SavedItems.objects.all()
