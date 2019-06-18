@@ -16,14 +16,21 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework import routers
 from quickstart import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+# router.register(r'users', views.UserViewSet)
+# router.register(r'groups', views.GroupViewSet)
 router.register(r'items', views.ItemsViewSet)
+router.register(r'saveditems', views.SavedItemsViewSet)
 
 urlpatterns =[
-        path('', include(router.urls)),
-        path('api-auth', include('rest_framework.urls', namespace='rest_framework'))
+        path('', include(router.urls))
     ]
+
+# urlpatternss = [
+# path('items/', views.item_list),
+#         path('items/<int:pk>', views.item_detail),
+# ]
+# urlpatternss = format_suffix_patterns(urlpatternss)

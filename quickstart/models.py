@@ -7,6 +7,14 @@ from django.dispatch import receiver
 from django.utils.safestring import mark_safe
 
 class Items(models.Model):
+    name = models.CharField(null=True, max_length=20)
     type = models.CharField(null=True, max_length=20)
-    number = models.IntegerField(unique=True, default=0)
-    quantity = models.IntegerField(default=0)
+    videolink = models.CharField(null=True, max_length=20)
+    description = models.TextField(blank=True, null=True)
+
+class SavedItems(models.Model):
+    nr = models.ForeignKey(Items,default=None, null=False, on_delete=models.CASCADE)
+    name = models.CharField(null=True, max_length=20)
+    type = models.CharField(null=True, max_length=20)
+    videolink = models.CharField(null=True, max_length=20)
+    description = models.TextField(blank=True, null=True)
