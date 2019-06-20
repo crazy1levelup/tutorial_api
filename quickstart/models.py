@@ -14,8 +14,9 @@ class Items(models.Model):
 
 
 class SavedItems(models.Model):
-    nr = models.ForeignKey(Items,unique=True, default=None, null=False, on_delete=models.CASCADE)
+    nr = models.ForeignKey(Items,default=None, null=False, on_delete=models.CASCADE)
     name = models.CharField(null=True, max_length=20)
     type = models.CharField(null=True, max_length=20)
     videolink = models.CharField(null=True, max_length=20)
     description = models.TextField(blank=True, null=True)
+    day = models.CharField(null=True, max_length=9)

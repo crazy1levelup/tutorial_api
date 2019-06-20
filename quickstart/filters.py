@@ -7,6 +7,7 @@ class SavedItemsFilter(django_filters.FilterSet):
         fields = {
             'nr': ['exact'],
             'type': ['exact'],
+            'day': ['exact'],
         }
 
 class ItemsFilter(django_filters.FilterSet):

@@ -22,4 +22,4 @@ class ItemsSerializer(serializers.ModelSerializer):
 class SavedItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SavedItems
-        fields = ('id', 'nr', 'name', 'type', 'videolink', 'description')
+        fields = ('id', 'nr', 'name', 'type', 'videolink', 'description', 'day')
